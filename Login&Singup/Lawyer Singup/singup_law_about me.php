@@ -64,12 +64,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $university = $_SESSION['universities'];
     $language = $_SESSION['languages_spoken'];
     $available = $_SESSION['availability'];
-    $image = $_SESSION['profile-image'];
+    $fee = $_SESSION['fee'];
     $aboutMe = $_SESSION['about-me'];
+    $image = $_SESSION['profile-image'];
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO lawyer (`name`, `last name`, `email`, `number`, `address`, `password`, `bar council`, `since`, `specialist`, `description`, `degree`, `university`, `language`, `available`, `image`, `about me`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssssssssssss", $firstName, $lastName, $email, $number, $address, $password, $barCouncil, $since, $specialist, $description, $degree, $university, $language, $available, $image, $aboutMe);
+    $stmt = $conn->prepare("INSERT INTO lawyer (`name`, `last name`, `email`, `number`, `address`, `password`, `bar council`, `since`, `specialist`, `description`, `degree`, `university`, `language`, `available`,`fee`, `image`, `about me`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssssssssssss", $firstName, $lastName, $email, $number, $address, $password, $barCouncil, $since, $specialist, $description, $degree, $university, $language, $available, $fee, $image, $aboutMe);
 
     // Execute the statement
     if ($stmt->execute()) {
