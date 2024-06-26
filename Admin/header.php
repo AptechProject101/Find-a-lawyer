@@ -74,7 +74,11 @@
                                 </span>
                                 <div class="dropdown-menu p-0 m-0">
                                     <form>
+<<<<<<< HEAD
                                         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+=======
+                                        <input class="form-control" type="search"  placeholder="Search" aria-label="Search">
+>>>>>>> master
                                     </form>
                                 </div>
                             </div>
